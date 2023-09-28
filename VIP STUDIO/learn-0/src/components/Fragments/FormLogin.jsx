@@ -4,11 +4,20 @@ import InputForm from "../Elements/input";
 const FormLogin=()=>{
     const handleLogin=(event)=>{
         event.preventDefault();
-        localStorage.setItem("email",event.target.email.value);
-        localStorage.setItem("password",event.target.password.value);
+        const user={
+            email:event.target.email.value,
+            password:event.target.password.value
+        }
+        const arrayUser=JSON.parse(localStorage.getItem("arrayUser"));
+        arrayUser.find((element)=>{
+          if(element.email===user.email && element.password===user.password){
+            window.location.href="/products"
+          }else{
+            alert("Email atau Password Salah")
+          }  
+        })
         event.target.email.value="";
         event.target.password.value="";
-        window.location.href="/products"
     }
     return(
         <form onSubmit={handleLogin} className="bg-orange-600 px-5 py-6 rounded-lg shadow-2xl">
