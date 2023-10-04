@@ -4,13 +4,16 @@
 
 @layer components{
   .nav-a{
-   @apply relative font-semibold uppercase text-slate-950 font-PlayfairDisplay 
+   @apply relative font-semibold uppercase font-PlayfairDisplay 
   }
   .nav-a-md{
     @apply flex items-center py-2 px-3 hover:bg-blue-300 lg:hover:bg-transparent lg:px-0 lg:py-0 lg:bg-transparent
   }
   .nav-a-span{
-  @apply h-[3px] scale-0 w-full absolute bottom-0 left-0 bg-gradient-to-r from-transparent via-slate-50 to-white transition-all duration-300 ease-in-out
+  @apply h-[3px] scale-0 w-full absolute bottom-0 left-0 bg-gradient-to-r from-transparent via-slate-50 to-red-500 transition-all duration-300 ease-in-out
   }
- 
+  .sidenav-li{
+    @apply bg-red-500 px-4 py-2 w-full rounded-full text-white font-bold  uppercase hover:bg-slate-50 hover:text-red-600 cursor-pointer transition-all duration-500
+  }
 }
+

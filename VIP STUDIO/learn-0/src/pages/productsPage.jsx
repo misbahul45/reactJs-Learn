@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Button from "../components/Elements/Buttons";
 import CardProduct from "../components/Fragments/CardProduct";
 
@@ -46,46 +46,43 @@ const products=[
 ]
 
 
-const user=JSON.parse(localStorage.getItem("arrayUser"));
 const ProductPages=()=>{
     const [card,setCard]=useState([]);
     const [totalprice,setTotalPrice]=useState(0);
     useEffect(()=>{
-       setCard(JSON.parse(localStorage.getItem("card"))||[]);
+        setCard(JSON.parse(localStorage.getItem("card"))||[])
     },[])
     useEffect(()=>{
-        if(card.length!==0){
-            const sum=card.reduce((acc,item)=>{
-                const product=products.find((product)=>product.id===item.id);
-                return parseFloat(acc+product.price*item.amount);
-            },0)
-            setTotalPrice(sum);
-            localStorage.setItem("card",JSON.stringify(card));
+        if(card.length>0){
+         const sum=card.reduce((acc,item)=>{
+            const product=products.find((item)=>item.id===item.id)
+                return acc+product.price*item.amount
+         },0)
+        setTotalPrice(sum)
+        localStorage.setItem("card",JSON.stringify(card))
         }
-       
     },[card])
-    const handleLogOut=()=>{
-        alert("Terima Kasih");
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
-        window.location.href="/login"
+
+    const handleLogOut = () => {
+        window.location.href = "/login";
     }
-    const handleAddCard = (id) => {
-        if (card.filter((item) => item.id === id).length !== 0) {
+
+    //useRef 
+    const handleToaddcard=(id)=>{
+       if(card.find((item)=>item.id===id)){
+          if(card.find((item)=>item.id===id)){
             setCard(
-                card.map((item) => (item.id === id ? { ...item, amount: item.amount + 1 } : item))
-            );
-        } else {
-            setCard([...card, { id, amount: 1 }]);
-        }
-    };
-
-
-
+                card.map((item)=>item.id===id ? {...item,amount:item.amount+1}:item)
+            )
+              
+          }
+       }else{
+           setCard([...card,{id,amount:1}])
+       }
+    }
     return(
        <Fragment>
         <div className="flex justify-end items-center bg-blue-700 text-white pr-10 py-[15px]">
-            {user[0].userName}
             <Button classname="bg-red-700" content="Logout" onClick={handleLogOut} />
         </div>
          <div className="flex w-full justify-between py-2">
@@ -97,7 +94,7 @@ const ProductPages=()=>{
                         <CardProduct.Body productName={item.name}>
                         {item.description}
                         </CardProduct.Body>
-                        <CardProduct.Footer price={item.price} handleAddCard={handleAddCard} id={item.id}/>
+                        <CardProduct.Footer price={item.price}  id={item.id} handleAddCard={handleToaddcard}/>
                     </CardProduct>
                   ))
             }
@@ -121,7 +118,7 @@ const ProductPages=()=>{
                                 <td>{product.name}</td>
                                 <td>{(product.price).toLocaleString('id-ID',{style:'currency',currency:'IDR'})}</td>
                                 <td>{item.amount}</td>
-                                <td>{(item.amount * parseFloat(product.price)).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
+                                <td>{(item.amount * Number(product.price)).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
                             </tr>
                           )
                         })}
@@ -134,7 +131,7 @@ const ProductPages=()=>{
                                 {(totalprice).toLocaleString(('id-ID'),{style:'currency',currency:'IDR'})}
                                 </b>
                             </td>
-                        </tr>
+                        </tr> 
                    </tbody>
                 </table>
             </div>

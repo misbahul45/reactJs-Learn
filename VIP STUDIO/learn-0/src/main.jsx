@@ -6,10 +6,11 @@ import LoginPage from './pages/loginPage.jsx';
 import RegisterPage from './pages/registerPage.jsx';
 import ErorPage from './pages/404.jsx';
 import ProductPages from './pages/productsPage.jsx';
+import Home from './pages/home';
 const couter=createBrowserRouter([
   {
     path:"/",
-    element:<div>Hello</div>,
+    element:<Home />,
     errorElement:<ErorPage />
   }
   ,{
