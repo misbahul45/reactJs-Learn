@@ -26,7 +26,6 @@ const ProjectState = () => {
       setExpense(storedData[lastIndex].expense)
       setTracker(storedData[lastIndex].tracker)
     }
-    console.log(storedData)
   },[])
 
   useEffect(()=>{
@@ -79,12 +78,12 @@ const Body=(props)=>{
         <div className="flex flex-col bg-gray-200 rounded-xl py-5 px-3 hover:shadow-2xl transition-all duration-500 ease-out">
             <div className="bg-red-500 rounded-t-xl px-5 py-4 flex justify-between items-center relative hover:bg-transparent transition-all duration-500">
                 <h6 className="text-green-500 font-bold text-xl">Payment</h6>
-                <p className="text-white font-semibold text-xl">{(income).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</p>
+                <p className="text-white font-semibold text-xl">{(expense).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</p>
                 <div className="absolute h-full right-0 w-2 bg-red-700 rounded-tr-xl"></div>
             </div>
             <div className="bg-green-500 rounded-b-xl shadow-xl px-5 py-4 flex justify-between items-center relative hover:bg-transparent transition-all duration-500">
                 <h6 className="text-red-500 font-bold text-xl">Docs</h6>
-                <p className="text-white font-semibold text-xl">{(expense).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</p>
+                <p className="text-white font-semibold text-xl">{(income).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</p>
                 <div className="absolute h-full right-0 w-2 bg-green-700 rounded-br-xl"></div>
             </div>    
         </div>
