@@ -11,7 +11,7 @@ const CardProduct=(props)=>{
 const Header=({ imgSrc, imgAlt })=>{
     return(
         <a href="">
-            <img src={imgSrc} alt={imgAlt} className="p-6"/>
+            <img src={imgSrc} alt={imgAlt} className="p-2"/>
         </a>
     )
 }
@@ -22,7 +22,7 @@ const Body=(props)=>{
             <a href="">
                 <h5 className="text-xl font-semibold tracking-tight text-white">{productName}</h5>
                 <p className="text-m text-white">
-                    {children}
+                    {children.substring(0,100)}
                 </p>
             </a>
         </div>

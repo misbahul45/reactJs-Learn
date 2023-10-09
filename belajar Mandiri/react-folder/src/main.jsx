@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import ProjectState from './RoadMap/hooks/ExpandTracker.jsx'
 import HomeForm from './RoadMap/hooks/Form.jsx'
+import NoteApp from './RoadMap/hooks/NoteApp.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
  const router = createBrowserRouter([
    {
@@ -15,6 +16,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
    },{
      path: '/Form',
      element: <HomeForm />
+   },{
+     path: '/NoteApp',
+     element: <NoteApp />
    }
  ])
 ReactDOM.createRoot(document.getElementById('root')).render(

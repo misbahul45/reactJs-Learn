@@ -7,6 +7,8 @@ import RegisterPage from './pages/registerPage.jsx';
 import ErorPage from './pages/404.jsx';
 import ProductPages from './pages/productsPage.jsx';
 import Home from './pages/home';
+import profile from './pages/profile';
+import detailProduct from './pages/detailProduct';
 const couter=createBrowserRouter([
   {
     path:"/",
@@ -24,6 +26,14 @@ const couter=createBrowserRouter([
   {
     path:"\products",
     element:<ProductPages />
+  },
+  {
+    path:"/profile",
+    element:<profile />
+  },
+  {
+    path:"/product/:id",
+    element:<detailProduct />
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(

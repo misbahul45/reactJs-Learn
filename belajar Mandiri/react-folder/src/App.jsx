@@ -7,7 +7,10 @@ function App() {
           <button className="bg-blue-500 px-4 py-2 rounded-md text-white">All App</button>
         </Link>
         <Link to={"/Form"}>
-          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">HomeForm</button>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Home Form</button>
+        </Link>
+        <Link to={"/NoteApp"}>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Note App</button>
         </Link>
     </div>
   )
