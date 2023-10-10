@@ -3,9 +3,10 @@ import {AiFillDelete,AiFillEdit,AiOutlineSearch,AiFillRead,AiOutlineMore,AiFillS
 import { useRef } from 'react'
 import LeftBar from './noteApp/Form'
 import Reading from './noteApp/Reading'
+import apiRequest from '../../get data/apireques.service'
 const NoteApp = () => {
     const firstActive=useRef()
-    const [content,setContent]=useState(JSON.parse(localStorage.getItem("All Notte"))||[])
+    const [content,setContent]=useState(JSON.parse(localStorage.getItem("All Note"))||[])
     const [searchItem,setSearchItem]=useState([])
     const [searchDisplay,setSearchDisplay]=useState(false)
     const [allData,setAllData]=useState([])
@@ -15,15 +16,16 @@ const NoteApp = () => {
     const [readItem,setReadItem]=useState("")
     const [erorTitle,setErorTitle]=useState("")
     const actived=useRef()
+    const API_URL="http://localhost:3500/items";
     const activeInput=()=>{
         actived.current.tittle.focus() 
     }
     useEffect(()=>{
-       localStorage.setItem("All Notte",JSON.stringify(content)) 
+        localStorage.setItem("All Note",JSON.stringify(content))
     },[content])
     useEffect(()=>{
-        localStorage.setItem("All Arsip",JSON.stringify(arsip)) 
-     },[arsip])
+        localStorage.setItem("All Arsip",JSON.stringify(arsip))
+    },[arsip])
     const handleForm=(e)=>{
         e.preventDefault()
         if(editItem){
@@ -37,8 +39,6 @@ const NoteApp = () => {
                     arsip:editItem.arsip
                 }
                 setArsip([...arsip])
-                setEditItem("")
-                setSearchItem([])
             }else{
                 const indexItem=content.findIndex((item)=>item.id===editItem.id)
                 content[indexItem]={
@@ -73,9 +73,29 @@ const NoteApp = () => {
                     edited:new Date().toLocaleString(),
                     arsip:false
                 }])
+                setSearchItem([])
+                const pushOptionItem={
+                    method:"POST",
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    body:JSON.stringify({
+                     "allNote":[
+                         ...content,
+                         {
+                            id:new Date().getTime().toString(),
+                            tittle:e.target.tittle.value,
+                            content:e.target.content.value,
+                            edited:new Date().toLocaleString(),
+                            arsip:false
+                        }
+                     ]
+                    })
+                }
+                apiRequest(API_URL,pushOptionItem)
                 e.target.tittle.value=""
                 e.target.content.value=""
-                setSearchItem([])
+
             }
         }
     }
@@ -141,6 +161,21 @@ const NoteApp = () => {
     }
     const deleteArsip=(id)=>{
         setArsip(arsip.filter((item)=>item.id!==id))
+        const deleteArsipOption={
+            method:"DELETE",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({
+                "arsipNote":[
+                    {
+                        id:id
+                    }
+                ]
+            })
+        }
+        apiRequest(`${API_URL}/${id}`,deleteArsipOption)
+
     }
     const editArsip=(id)=>{
         setEditItem(arsip.find((item)=>item.id===id))

@@ -1,0 +1,41 @@
+{
+  "items": {
+    "allNote": [
+      {
+        "id": "1696910183020",
+        "tittle": "anak ayam",
+        "content": "anak ayam adalah anak ayam anak lontong enak dipangan poll hahaha",
+        "edited": "10/10/2023, 11:50:03 AM",
+        "arsip": false
+      },
+      {
+        "id": "1696910285905",
+        "tittle": "catatan pertama",
+        "content": "ini adalah catatan pertama",
+        "edited": "10/10/2023, 10:58:05 AM",
+        "arsip": false
+      },
+      {
+        "id": "1696913406697",
+        "tittle": "anak ayam =>bukan",
+        "content": "anak ayam adalah anak ayam anak lontong enak dipangan poll hahaha",
+        "edited": "10/10/2023, 11:51:17 AM",
+        "arsip": false
+      },
+      {
+        "id": "1696913469470",
+        "tittle": "bukan anak ayam",
+        "content": "anak ayam adalah anak ayam anak lontong enak dipangan poll hahaha",
+        "edited": "10/10/2023, 11:51:09 AM",
+        "arsip": false
+      },
+      {
+        "id": "1696913535089",
+        "tittle": "bukan anak ayam=>ini juga bukan",
+        "content": "anak ayam adalah anak ayam anak lontong enak dipangan poll hahaha",
+        "edited": "10/10/2023, 11:52:15 AM",
+        "arsip": false
+      }
+    ]
+  }
+}

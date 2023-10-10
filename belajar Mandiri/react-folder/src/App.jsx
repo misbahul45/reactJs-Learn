@@ -12,6 +12,9 @@ function App() {
         <Link to={"/NoteApp"}>
           <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Note App</button>
         </Link>
+        <Link to={"/OpsidianClone"}>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Opsidian Clone</button>
+        </Link>
     </div>
   )
 }
