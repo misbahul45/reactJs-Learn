@@ -15,6 +15,12 @@ function App() {
         <Link to={"/OpsidianClone"}>
           <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Opsidian Clone</button>
         </Link>
+        <Link to={"/Blog"}>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">Blog Project</button>
+        </Link>
+        <Link to={"/random"}>
+          <button className="bg-blue-500 px-4 py-2 rounded-md text-white">random Project</button>
+        </Link>
     </div>
   )
 }

@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "postingan pertama  ",
+      "dateTime": "Mon Oct 16 2023 15:39:29 GMT+0700 (Western Indonesia Time)",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "title": "lontong makan lontong bro",
+      "dateTime": "Mon Oct 16 2023 15:39:17 GMT+0700 (Western Indonesia Time)",
+      "body": "eank sekali lontong itu"
+    }
+  ]
+}
