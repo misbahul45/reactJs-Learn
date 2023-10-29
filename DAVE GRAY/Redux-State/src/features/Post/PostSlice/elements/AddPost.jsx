@@ -44,8 +44,6 @@ const AddPost = () => {
             }
          }
     }
-    const allPost=useSelector(selectAllPosts)
-    console.log(allPost)
 
   return (
     <div className="w-full max-w-lg mb-5">

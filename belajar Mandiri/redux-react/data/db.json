@@ -1,0 +1,85 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "javaScript Fundamental courses in order to arrow function",
+        "img": "https://source.unsplash.com/random/?Game",
+        "date": "12 oktober 2004",
+        "reaction": [
+          {
+            "title": "Upvote",
+            "amount": 0
+          },
+          {
+            "title": "Comments",
+            "amount": 0
+          },
+          {
+            "title": "Share",
+            "amount": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Lamborghini",
+        "img": "https://source.unsplash.com/random/?Lamborghini",
+        "date": "25 oktober 2004",
+        "reaction": [
+          {
+            "title": "Upvote",
+            "amount": 0
+          },
+          {
+            "title": "Comments",
+            "amount": 0
+          },
+          {
+            "title": "Share",
+            "amount": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Caffeine",
+        "img": "https://source.unsplash.com/random/?Caffeine",
+        "date": "25 oktober 2004",
+        "reaction": [
+          {
+            "title": "Upvote",
+            "amount": 0
+          },
+          {
+            "title": "Comments",
+            "amount": 0
+          },
+          {
+            "title": "Share",
+            "amount": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "javaScript Fundamental",
+        "img": "https://source.unsplash.com/random/?JavaScript",
+        "date": "25 oktober 2004",
+        "reaction": [
+          {
+            "title": "Upvote",
+            "amount": 0
+          },
+          {
+            "title": "Comments",
+            "amount": 0
+          },
+          {
+            "title": "Share",
+            "amount": 0
+          }
+        ]
+      }
+    ]
+  }
+   

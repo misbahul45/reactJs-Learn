@@ -3,17 +3,17 @@ import CardSide from './itemsContent/SideBarContent/CardSide'
 import {CgProfile} from 'react-icons/cg'
 import {BsFillArrowLeftSquareFill,BsFillArrowRightSquareFill} from 'react-icons/bs'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const SideBar = ({open,setOpen}) => {
-  const[clickSideBar,setClickSideBar]=useState("feed")
+const SideBar = ({open,setOpen,setClickSideBar,clickSideBar}) => {
   return (
     <aside className="z-10 h-full absolute top-0 left-0">
-       <div
-       onClick={()=>setClickSideBar("feed")}
-       className={` relative ${open?"pt-24":"w-64 pt-20"} bg-slate-900 overflow-y-scroll h-full border-r-[1px] border-slate-50 scrollbar-hide transition-all duration-500 group`}>
-          <div className={`${open?"px-2":"px-5"} flex items-center  ${clickSideBar==="feed"?"bg-gray-600":""} py-1 gap-2 cursor-pointer text-white transition-all duration-500`}>
-            <CgProfile  className={`${open?"lg:text-3xl":"text-2xl"} text-white transition-all duration-500`}/>
-            <h2 className={`${open?"hidden":"block"} text-white text-sm font-semibold font-rubik`}>My feed</h2>
+       <div className={` relative ${open?"pt-24":"w-64 pt-20"} bg-slate-900 overflow-y-scroll h-full border-r-[1px] border-slate-50 scrollbar-hide transition-all duration-500 group`}>
+          <div onClick={()=>setClickSideBar("feed")}>
+            <Link to='/' className={`${open?"px-2":"px-5"} flex items-center  ${clickSideBar==="feed"?"bg-gray-600":""} py-1 gap-2 cursor-pointer text-white transition-all duration-500`}>
+              <CgProfile className={`${open?"lg:text-3xl":"text-2xl"} text-white transition-all duration-500`}/>
+              <h2 className={`${open?"hidden":"block"} text-white text-sm font-semibold font-rubik`}>My feed</h2>
+            </Link>
           </div>
           <div className="flex flex-col h-full min-h-screen justify-between mt-6 pb-5">
               <div className="flex flex-col gap-7">

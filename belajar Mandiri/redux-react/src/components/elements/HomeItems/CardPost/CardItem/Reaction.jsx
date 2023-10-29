@@ -1,19 +1,34 @@
 import React from 'react'
-const Reaction = ({reaction}) => {
+import { useDispatch } from 'react-redux'
+import { addReactions } from '../../../../../reduxStore/PostsSlice/postSlice'
+const Reaction = ({reaction, reactionIcons}) => {
+  let hoverColor=''
   let color=''
+  const dispatch=useDispatch()
+
+  const handleReaction=(action)=>{
+    dispatch(addReactions(action))
+  }
   return (
     <div className="w-full flex justify-between py-1 mt-2 px-1">
       {reaction.map((react)=>{
         if(react.title==="Upvote"){
-            color="hover:bg-green-500"
+            hoverColor="hover:bg-green-500"
+            color="bg-green-500"
           }else if(react.title==="Comments"){
-            color="hover:bg-cyan-900"
+            hoverColor="hover:bg-cyan-500"
+            color="bg-cyan-500"
           }else{
-            color="hover:bg-purple-600"
+            hoverColor="hover:bg-purple-500"
+            color="bg-purple-500"
           }    
           return(
-            <button key={`${react.length}-${react.title}`} className={`relative p-2 rounded-md ${color} group text-white transition-all duration-500`} >
-                {react.icon}
+            <button
+            onClick={()=>{handleReaction(react.title)
+            console.log(react.amount)}}
+            key={`${react.length}-${react.title}`} className={`flex items-center gap-2 relative p-2 rounded-md ${react.amount===0?`${hoverColor}`:`${color}`} group text-white transition-all duration-500`} >
+                {reactionIcons[react.title]}
+                <p>{react.amount}</p>
                 <p className="absolute left-1/2 -top-10 translate-x-[-50%] px-2 text-slate-900 bg-gray-50 rounded-lg font-eubick font-bold scale-0 translate-y-20 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-500">{react.title}</p>
             </button>
           )
