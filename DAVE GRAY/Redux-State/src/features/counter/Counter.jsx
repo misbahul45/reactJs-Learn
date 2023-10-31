@@ -8,8 +8,6 @@ const Counter = () => {
   const [incrementNumber,setIncrementNumber]=useState(0)  
   const addNumberByAMount=()=>{
     dispatch(incrementByAMount(incrementNumber))
-    console.log(incrementNumber)
-    console.log(count)
   }
   return (
     <section className="h-screen flex flex-col items-center justify-center">
