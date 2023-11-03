@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import {BiSolidUpArrow,BiSolidDownArrow} from 'react-icons/bi'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { addPost } from '../../reduxStore/PostsSlice/postSlice'
 import { useNavigate } from 'react-router'
+import { getAllPost } from '../../reduxStore/PostsSlice/postSlice'
 const SubmitArticle = ({open,setClickSideBar}) => {
     let navigate=useNavigate()
     const dispatch=useDispatch()
@@ -10,6 +11,10 @@ const SubmitArticle = ({open,setClickSideBar}) => {
     const[body,setBody]=useState('')
     const [img,setImg]=useState('')
     const [dropbown,setDropbown]=useState(false)
+
+    const post=useSelector(getAllPost)
+    console.log(post)
+
 
 
     const handleImage=(e)=>{

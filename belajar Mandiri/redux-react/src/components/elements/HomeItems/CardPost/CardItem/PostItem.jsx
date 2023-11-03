@@ -26,7 +26,7 @@ const PostItem = ({post}) => {
           </div>
       </Link>  
       <div>
-          <Reaction reaction={post.reaction} reactionIcons={reactionIcons} />
+          <Reaction reaction={post.reaction} reactionIcons={reactionIcons} postId={post.id} />
       </div>
     </>
   )

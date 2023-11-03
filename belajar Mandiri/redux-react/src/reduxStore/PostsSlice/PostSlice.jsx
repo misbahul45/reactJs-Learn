@@ -60,15 +60,18 @@ const allPosts=createSlice({
             }
         }
        },
-       addReactions:(state,actions)=>{
-        state.posts.map((post)=>{
-            post.reaction.map((react)=>{
-                if(react.title===actions.payload){
-                    react.amount===0?react.amount+=1:react.amount-=1
-                }
-            })
-        })
-       }
+       addReactions: (state, actions) => {
+        const { postId, react } = actions.payload;
+        state.posts.map((post) => {
+          if (post.id === postId) {
+            post.reaction.map((action) => {
+              if (action.title === react) {
+                action['amount']++;
+              }
+            });
+          }
+        });
+      }      
     },
     extraReducers:{}
 })

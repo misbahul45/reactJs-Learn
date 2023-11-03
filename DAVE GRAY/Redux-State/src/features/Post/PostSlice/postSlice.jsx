@@ -10,12 +10,8 @@ const initialState={
     error:null
 }
 export const fetchPosts=createAsyncThunk('posts/fetchPosts',async()=>{
-    try{
         const response=await axios.get(POSTS_URL);
         return [...response.data]
-    }catch(e){
-        return e.message
-    }
 })
 
 export const addNewPost=createAsyncThunk('posts/addNewPosts',async(initialPost)=>{
@@ -108,6 +104,7 @@ const postSlice =createSlice({
 export const selectAllPosts=(state)=>state.posts.posts
 export const getPostsStatus=(state)=>state.posts.status
 export const getPostsError=(state)=>state.posts.error
+
 
 
 export const {postAdd,reactionAdded}=postSlice.actions

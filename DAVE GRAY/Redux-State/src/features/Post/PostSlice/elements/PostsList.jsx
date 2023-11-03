@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { selectAllPosts,getPostsError,getPostsStatus,fetchPosts } from "../postSlice";
-import AddPost from "./AddPost";
-import PostAuthor from "./PostAuthor";
-import TimeAgo from "./TimeAgo";
-import Reactions from "./Reactions";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import PostsExcerpt from './PostsExcerpt';
 const PostsList = () => {
-  const dispatch=useDispatch()
+    const dispatch=useDispatch()
+    const topRef=useRef()
 
     const posts=useSelector(selectAllPosts)
     const postsStatus=useSelector(getPostsStatus)
@@ -32,12 +29,17 @@ const PostsList = () => {
       content=<p>{error}</p>
     }
 
+    const handleTopRef=()=>{
+      if(topRef.current){
+        topRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   return (
-    <section className="bg-slate-800 min-h-screen flex flex-col items-center justify-center gap-2 px-7 py-1">
-        <AddPost />
-       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-5 w-full  gap-4 border-white border-2 rounded-2xl p-5">
+    <section ref={topRef} className="bg-slate-800 flex flex-col items-center justify-center gap-2 px-7 py-5">
+       <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-5 w-full  gap-4  rounded-2xl p-5">
        {content}
        </div>
+       <button onClick={handleTopRef} className="fixed bottom-4 left-4 z-20 bg-red-500 px-10 py-3 rounded-lg">up</button>
     </section>
   )
 }

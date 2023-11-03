@@ -1,13 +1,13 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addReactions } from '../../../../../reduxStore/PostsSlice/postSlice'
-const Reaction = ({reaction, reactionIcons}) => {
+const Reaction = ({reaction, reactionIcons,postId}) => {
   let hoverColor=''
   let color=''
   const dispatch=useDispatch()
 
-  const handleReaction=(action)=>{
-    dispatch(addReactions(action))
+  const handleReaction=(postId,react)=>{
+    dispatch(addReactions({postId,react}))
   }
   return (
     <div className="w-full flex justify-between py-1 mt-2 px-1">
@@ -24,8 +24,7 @@ const Reaction = ({reaction, reactionIcons}) => {
           }    
           return(
             <button
-            onClick={()=>{handleReaction(react.title)
-            console.log(react.amount)}}
+            onClick={()=>handleReaction(postId,react.title)}
             key={`${react.length}-${react.title}`} className={`flex items-center gap-2 relative p-2 rounded-md ${react.amount===0?`${hoverColor}`:`${color}`} group text-white transition-all duration-500`} >
                 {reactionIcons[react.title]}
                 <p>{react.amount}</p>

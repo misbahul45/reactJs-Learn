@@ -2,7 +2,7 @@ import React from 'react'
 import PostsList from '../PostSlice/elements/PostsList'
 const PostProject = () => {
   return (
-    <PostsList />
+      <PostsList />
   )
 }
 
