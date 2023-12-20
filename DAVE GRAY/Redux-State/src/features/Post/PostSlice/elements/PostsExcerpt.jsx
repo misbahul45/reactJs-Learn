@@ -5,7 +5,6 @@ import Reactions from './Reactions'
 
 import { Link } from 'react-router-dom'
 const PostsExcerpt = ({post}) => {
-    console.log(post)
   return (
     <>
         <article className="border-white border-[1.5px] rounded-2xl  p-3 flex flex-col justify-between">

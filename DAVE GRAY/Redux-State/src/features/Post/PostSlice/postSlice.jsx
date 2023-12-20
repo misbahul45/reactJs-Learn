@@ -15,14 +15,15 @@ export const fetchPosts=createAsyncThunk('posts/fetchPosts',async()=>{
 })
 
 export const addNewPost=createAsyncThunk('posts/addNewPosts',async(initialPost)=>{
-    try{
         const response=await axios.post(POSTS_URL,initialPost);
         return response.data
-    }catch(e){
-        return e.message
-    }
 })
 
+export const editPost=createAsyncThunk('posts/editPost',async(editingPost)=>{
+    const { id }=editingPost.payload
+    const response=await axios.put(`${POSTS_URL}/${id}`,editingPost.payload);
+    return response.data
+})
 
 const postSlice =createSlice({
     name:'Posts',
@@ -97,6 +98,13 @@ const postSlice =createSlice({
                     coffee:0
                 }
                 state.posts.push(actions.payload)
+            })
+            .addCase(editPost.fulfilled,(state,actions)=>{
+                const editingItem=actions.payload
+                console.log(editingItem)
+                state.posts=state.posts.map((post)=>{
+                    post.id===editingItem.id?editingItem:item
+                })
             })
     }
 })

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router'
-import { selectAllPosts } from '../postSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router'
+import { editPost, selectAllPosts } from '../postSlice'
+
 const EditPost = () => {
     const getId =useParams()
     const postId=Number(getId.id)
@@ -11,6 +12,20 @@ const EditPost = () => {
 
     const [title,setTitle]=useState(post.title)
     const [body,setBody]=useState(post.body)
+
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+
+    const handleEdit=()=>{
+      const editPostItem={
+        postId,
+        title,
+        body,
+        date:new Date().toISOString()
+      }
+      dispatch(editPost(editPostItem))
+      navigate(`/post/${postId}`)
+    }
 
     if(!post){
       return(
@@ -23,7 +38,7 @@ const EditPost = () => {
     <main className="w-full h-screen flex items-center justify-center bg-slate-800">
     <div className="w-full max-w-lg mb-5">
         <h1 className="text-white text-center font-bold uppercase text-2xl font-serif my-5">Edit Post</h1>
-            <form className="bg-gray-500 px-5 py-7 rounded-xl flex flex-col gap-4">
+            <form onSubmit={(e)=>e.preventDefault()} className="bg-gray-500 px-5 py-7 rounded-xl flex flex-col gap-4">
                 <label htmlFor="title" className="w-full flex flex-col gap-1">
                     <span className="text-slate-50 font-semibold ml-2 text-lg">Title</span>
                     <input
@@ -39,7 +54,7 @@ const EditPost = () => {
                     <span className="text-slate-50 font-semibold ml-2 text-lg">Content</span>
                     <textarea
                     placeholder="content"
-                    className="px-2 py-1 rounded-lg outline-none text-slate-700 text-md focus:ring-[3px] focus:ring-slate-700 bg-gray-100"
+                    className="px-2 py-1 rounded-lg outline-none text-slate-700 text-md focus:ring-[3px] focus:ring-slate-700 bg-gray-100 h-48 resize-none"
                     type="text" 
                     name="content" 
                     id="content" 
@@ -48,8 +63,9 @@ const EditPost = () => {
                     required />
                 </label>
                 <button
+                onClick={handleEdit}
                 className="bg-black text-white w-24 py-2 rounded-lg cursor-pointer hover:bg-black/70"
-                type="button" >Add Post</button>
+                type="button">Edit Post</button>
             </form>
         </div>
 </main>

@@ -1,0 +1,444 @@
+{
+  "movies": [
+    {
+      "id": 11,
+      "title": "The Silence of the Lambs",
+      "cast": [
+        "Jodie Foster",
+        "Anthony Hopkins",
+        "Scott Glenn"
+      ],
+      "duration": 118,
+      "img": "silence_of_the_lambs.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Fight Club",
+      "cast": [
+        "Edward Norton",
+        "Brad Pitt",
+        "Helena Bonham Carter"
+      ],
+      "duration": 139,
+      "img": "fight_club.jpg"
+    },
+    {
+      "id": 13,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "cast": [
+        "Elijah Wood",
+        "Ian McKellen",
+        "Viggo Mortensen"
+      ],
+      "duration": 178,
+      "img": "lotr_fellowship.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Inglourious Basterds",
+      "cast": [
+        "Brad Pitt",
+        "Christoph Waltz",
+        "Mélanie Laurent"
+      ],
+      "duration": 153,
+      "img": "inglourious_basterds.jpg"
+    },
+    {
+      "id": 15,
+      "title": "The Avengers",
+      "cast": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Scarlett Johansson"
+      ],
+      "duration": 143,
+      "img": "avengers.jpg"
+    },
+    {
+      "id": 16,
+      "title": "The Shawshank Redemption",
+      "cast": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ],
+      "duration": 142,
+      "img": "shawshank_redemption.jpg"
+    },
+    {
+      "id": 17,
+      "title": "The Departed",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Matt Damon",
+        "Jack Nicholson"
+      ],
+      "duration": 151,
+      "img": "the_departed.jpg"
+    },
+    {
+      "id": 18,
+      "title": "The Grand Budapest Hotel",
+      "cast": [
+        "Ralph Fiennes",
+        "F. Murray Abraham",
+        "Mathieu Amalric"
+      ],
+      "duration": 100,
+      "img": "grand_budapest_hotel.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Casablanca",
+      "cast": [
+        "Humphrey Bogart",
+        "Ingrid Bergman",
+        "Paul Henreid"
+      ],
+      "duration": 102,
+      "img": "casablanca.jpg"
+    },
+    {
+      "id": 20,
+      "title": "The Social Network",
+      "cast": [
+        "Jesse Eisenberg",
+        "Andrew Garfield",
+        "Justin Timberlake"
+      ],
+      "duration": 120,
+      "img": "the_social_network.jpg"
+    },
+    {
+      "id": 21,
+      "title": "The Dark Knight Rises",
+      "cast": [
+        "Christian Bale",
+        "Tom Hardy",
+        "Anne Hathaway"
+      ],
+      "duration": 164,
+      "img": "dark_knight_rises.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Gone with the Wind",
+      "cast": [
+        "Clark Gable",
+        "Vivien Leigh",
+        "Olivia de Havilland"
+      ],
+      "duration": 238,
+      "img": "gone_with_the_wind.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Gladiator",
+      "cast": [
+        "Russell Crowe",
+        "Joaquin Phoenix",
+        "Connie Nielsen"
+      ],
+      "duration": 155,
+      "img": "gladiator.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "cast": [
+        "Jim Carrey",
+        "Kate Winslet",
+        "Tom Wilkinson"
+      ],
+      "duration": 108,
+      "img": "eternal_sunshine.jpg"
+    },
+    {
+      "id": 25,
+      "title": "The Princess Bride",
+      "cast": [
+        "Cary Elwes",
+        "Mandy Patinkin",
+        "Robin Wright"
+      ],
+      "duration": 98,
+      "img": "princess_bride.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Goodfellas",
+      "cast": [
+        "Robert De Niro",
+        "Ray Liotta",
+        "Joe Pesci"
+      ],
+      "duration": 146,
+      "img": "goodfellas.jpg"
+    },
+    {
+      "id": 27,
+      "title": "Memento",
+      "cast": [
+        "Guy Pearce",
+        "Carrie-Anne Moss",
+        "Joe Pantoliano"
+      ],
+      "duration": 113,
+      "img": "memento.jpg"
+    },
+    {
+      "id": 28,
+      "title": "The Usual Suspects",
+      "cast": [
+        "Kevin Spacey",
+        "Gabriel Byrne",
+        "Chazz Palminteri"
+      ],
+      "duration": 106,
+      "img": "usual_suspects.jpg"
+    },
+    {
+      "id": 29,
+      "title": "The Green Mile",
+      "cast": [
+        "Tom Hanks",
+        "Michael Clarke Duncan",
+        "David Morse"
+      ],
+      "duration": 189,
+      "img": "green_mile.jpg"
+    },
+    {
+      "id": 30,
+      "title": "The Pianist",
+      "cast": [
+        "Adrien Brody",
+        "Thomas Kretschmann",
+        "Frank Finlay"
+      ],
+      "duration": 150,
+      "img": "pianist.jpg"
+    },
+    {
+      "id": 31,
+      "title": "The Godfather Part II",
+      "cast": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Robert Duvall"
+      ],
+      "duration": 202,
+      "img": "godfather_part_ii.jpg"
+    },
+    {
+      "id": 32,
+      "title": "The Shawshank Redemption",
+      "cast": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ],
+      "duration": 142,
+      "img": "shawshank_redemption_2.jpg"
+    },
+    {
+      "id": 33,
+      "title": "The Dark Knight",
+      "cast": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart"
+      ],
+      "duration": 152,
+      "img": "dark_knight_2.jpg"
+    },
+    {
+      "id": 34,
+      "title": "Forrest Gump",
+      "cast": [
+        "Tom Hanks",
+        "Robin Wright",
+        "Gary Sinise"
+      ],
+      "duration": 142,
+      "img": "forrest_gump_2.jpg"
+    },
+    {
+      "id": 35,
+      "title": "Schindler's List",
+      "cast": [
+        "Liam Neeson",
+        "Ben Kingsley",
+        "Ralph Fiennes"
+      ],
+      "duration": 195,
+      "img": "schindlers_list_2.jpg"
+    },
+    {
+      "id": 36,
+      "title": "Titanic",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Kate Winslet",
+        "Billy Zane"
+      ],
+      "duration": 195,
+      "img": "titanic_2.jpg"
+    },
+    {
+      "id": 37,
+      "title": "The Matrix",
+      "cast": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss"
+      ],
+      "duration": 136,
+      "img": "matrix_2.jpg"
+    },
+    {
+      "id": 38,
+      "title": "Avatar",
+      "cast": [
+        "Sam Worthington",
+        "Zoe Saldana",
+        "Sigourney Weaver"
+      ],
+      "duration": 162,
+      "img": "avatar_2.jpg"
+    },
+    {
+      "id": 39,
+      "title": "Inception",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Ellen Page"
+      ],
+      "duration": 148,
+      "img": "inception_2.jpg"
+    },
+    {
+      "id": 40,
+      "title": "The Shawshank Redemption",
+      "cast": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ],
+      "duration": 142,
+      "img": "shawshank_redemption_3.jpg"
+    },
+    {
+      "id": 41,
+      "title": "The Godfather",
+      "cast": [
+        "Marlon Brando",
+        "Al Pacino",
+        "James Caan"
+      ],
+      "duration": 175,
+      "img": "godfather_2.jpg"
+    },
+    {
+      "id": 42,
+      "title": "Pulp Fiction",
+      "cast": [
+        "John Travolta",
+        "Samuel L. Jackson",
+        "Uma Thurman"
+      ],
+      "duration": 154,
+      "img": "pulp_fiction_2.jpg"
+    },
+    {
+      "id": 43,
+      "title": "The Dark Knight",
+      "cast": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart"
+      ],
+      "duration": 152,
+      "img": "dark_knight_3.jpg"
+    },
+    {
+      "id": 44,
+      "title": "Forrest Gump",
+      "cast": [
+        "Tom Hanks",
+        "Robin Wright",
+        "Gary Sinise"
+      ],
+      "duration": 142,
+      "img": "forrest_gump_3.jpg"
+    },
+    {
+      "id": 45,
+      "title": "Schindler's List",
+      "cast": [
+        "Liam Neeson",
+        "Ben Kingsley",
+        "Ralph Fiennes"
+      ],
+      "duration": 195,
+      "img": "schindlers_list_3.jpg"
+    },
+    {
+      "id": 46,
+      "title": "Titanic",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Kate Winslet",
+        "Billy Zane"
+      ],
+      "duration": 195,
+      "img": "titanic_3.jpg"
+    },
+    {
+      "id": 47,
+      "title": "The Matrix",
+      "cast": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss"
+      ],
+      "duration": 136,
+      "img": "matrix_3.jpg"
+    },
+    {
+      "id": 48,
+      "title": "Avatar",
+      "cast": [
+        "Sam Worthington",
+        "Zoe Saldana",
+        "Sigourney Weaver"
+      ],
+      "duration": 162,
+      "img": "avatar_3.jpg"
+    },
+    {
+      "id": 49,
+      "title": "Inception",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Ellen Page"
+      ],
+      "duration": 148,
+      "img": "inception_3.jpg"
+    },
+    {
+      "id": 50,
+      "title": "The Shawshank Redemption",
+      "cast": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ],
+      "duration": 142,
+      "img": "shawshank_redemption_4.jpg"
+    }
+  ]
+}

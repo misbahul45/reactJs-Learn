@@ -1,12 +1,16 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk, createSelector, createEntityAdapter } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const initialState={
+const actionAdapter=createEntityAdapter({
+  selectId:(action)=>action.id,
+  sortComparer:(a,b)=>a.id-b.id
+})
+
+const initialState=actionAdapter.getInitialState({
     status:"idle",
-    actions:[],
-    eror:'',
+    error:'',
     loading:false
-}
+})
 
 export const getPost=createAsyncThunk('actions/actions',async()=>{
     const respon=await axios.get("http://localhost:3500/items")
@@ -22,6 +26,8 @@ export const updatePost=createAsyncThunk('actions/update',async(initialPost)=>{
     return respon.data
 })
 
+
+
 const ActionSlice = createSlice({
     name: 'actions',
     initialState,
@@ -31,23 +37,26 @@ const ActionSlice = createSlice({
         .addCase(getPost.pending, (state) => {
           state.loading = true;
         })
-        .addCase(getPost.fulfilled, (state, value) => {
+        .addCase(getPost.fulfilled, (state, action) => {
           state.loading = false;
-          state.actions = value.payload;
+          actionAdapter.setAll(state, action.payload)
         })
-        .addCase(addPost.fulfilled,(state,value)=>{
-          state.actions.push(value.payload)
+        .addCase(addPost.fulfilled,(state,action)=>{
+          actionAdapter.addOne(state, action.payload)
         })
-        .addCase(updatePost.fulfilled,(state,value)=>{
-          const newdata=value.payload
-          state.actions = state.actions.map((item) =>
-          item.id === newdata.id ? { ...item, name: newdata.name, keterangan: newdata.keterangan } : item
-          )
+        .addCase(updatePost.fulfilled,(state,action)=>{
+          actionAdapter.updateOne(state, {id:action.payload.id, changes:action.payload})
         })
     },
   });
   
-  export const getAllPost=(state)=>state.actions.actions
+ export const { selectAll:getAllPost,selectById:getActionById }= actionAdapter.getSelectors((state)=>state.actions)
+
+  export const filterActions=createSelector(
+    [getAllPost, (state,userId)=>userId],
+    (actions, userId) =>actions.filter(action=>action.userId===userId)
+  )
+
 
 export default ActionSlice.reducer
 export const {post,updateActionsPost}=ActionSlice.actions
