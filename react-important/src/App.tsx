@@ -9,13 +9,15 @@ const App = () => {
       setTodos(localStorage.getItem("todos")? JSON.parse(localStorage.getItem("todos") as string):[])
     }
   },[!isUpdate])
-  console.log(todos)
+
   return (
     <div className='bg-slate-800 w-full min-h-screen flex'>
-      <div className="flex-1 flex gap-3 flex-wrap justify-center py-4 max-h-screen overflow-auto">
+      <div className="flex-1 flex gap-4 justify-center flex-wrap py-2 max-h-screen overflow-auto">
         {todos.map((todo) => (
           <Todo
+          seTodos={setTodos}
           key={todo.id}
+          
           {...todo}
           />
         ))}
